@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>vue易错笔记.md | 小石头</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="几点要点 没有控制器的概念，所有的方法和逻辑应该写在方法中或者生命周期方法中  插值（mustache）不能在属性中使用，只能在模板中使用，属性中应该用v-bind:title=&amp;quot;xxx&amp;quot;这样，不能title=  绑定都只能包含单个表达式，所以下面的例子都不会生效。">
+<meta name="keywords" content="学习,前端,html,js,css,vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue易错笔记.md">
+<meta property="og:url" content="http://clownvary.github.io/2016/11/18/vue易错笔记/index.html">
+<meta property="og:site_name" content="小石头">
+<meta property="og:description" content="几点要点 没有控制器的概念，所有的方法和逻辑应该写在方法中或者生命周期方法中  插值（mustache）不能在属性中使用，只能在模板中使用，属性中应该用v-bind:title=&amp;quot;xxx&amp;quot;这样，不能title=  绑定都只能包含单个表达式，所以下面的例子都不会生效。">
+<meta property="og:updated_time" content="2017-06-16T06:27:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue易错笔记.md">
+<meta name="twitter:description" content="几点要点 没有控制器的概念，所有的方法和逻辑应该写在方法中或者生命周期方法中  插值（mustache）不能在属性中使用，只能在模板中使用，属性中应该用v-bind:title=&amp;quot;xxx&amp;quot;这样，不能title=  绑定都只能包含单个表达式，所以下面的例子都不会生效。">
+  
+    <link rel="alternative" href="/atom.xml" title="小石头" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://avatars1.githubusercontent.com/u/6481427?v=3&amp;s=460" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">clownvary</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">漏鱼</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="http://github.com/clownvary" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/wang-yan-27-18" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/angular2/" style="font-size: 10px;">angular2</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/js/" style="font-size: 15px;">js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/前端/" style="font-size: 15px;">前端</a> <a href="/tags/学习/" style="font-size: 20px;">学习</a> <a href="/tags/新手注意/" style="font-size: 10px;">新手注意</a> <a href="/tags/注意事项/" style="font-size: 10px;">注意事项</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/配置/" style="font-size: 10px;">配置</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">一个对前端又爱又恨的码农</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">clownvary</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://avatars1.githubusercontent.com/u/6481427?v=3&amp;s=460" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">clownvary</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">漏鱼</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="http://github.com/clownvary" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/wang-yan-27-18" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-vue易错笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/18/vue易错笔记/" class="article-date">
+  	<time datetime="2016-11-17T16:23:01.000Z" itemprop="datePublished">2016-11-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue易错笔记.md
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="几点要点"><a href="#几点要点" class="headerlink" title="几点要点"></a>几点要点</h3><ul>
+<li><p>没有控制器的概念，所有的方法和逻辑应该写在方法中或者生命周期方法中</p>
+</li>
+<li><p>插值（mustache）不能在属性中使用，只能在模板中使用，属性中应该用<code>v-bind:title=&quot;xxx&quot;</code>这样，不能<code>title=</code></p>
+</li>
+<li><p>绑定都只能包含单个表达式，所以下面的例子都不会生效。</p>
+</li>
+</ul>
+<a id="more"></a>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="comment">&lt;!-- 这是语句，不是表达式 --&gt;</span></span></div><div class="line"><span class="template-variable">&#123;&#123; var a = 1 &#125;</span><span class="xml">&#125;</span></div><div class="line"><span class="comment">&lt;!-- 流控制也不会生效，请使用三元表达式 --&gt;</span></div><div class="line"><span class="template-variable">&#123;&#123; <span class="keyword">if</span> (ok) &#123; return message &#125;</span><span class="xml"> &#125;&#125;</span></div></pre></td></tr></table></figure>
+<ul>
+<li><p>v-bind:title 缩写:title,v-on:click= 缩写@click=</p>
+</li>
+<li><p>计算属性computed和watch,耗时长用watch,另外计算属性是依赖基础属性的如果基础属性没变化是不会调用的，如下</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">computed: &#123;</div><div class="line">  <span class="attr">now</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Date</span>.now()</div><div class="line">  &#125;</div><div class="line">&#125; <span class="comment">//此时now就不会更新，显然这时候使用method更好</span></div></pre></td></tr></table></figure>
+<ul>
+<li><p>组件中ｄａｔａ必须是方法而不能是对象，这样当有多个组件时，不会出现都引用同一个的问题</p>
+</li>
+<li><p>组件实例化要放在根实例化之前</p>
+</li>
+<li><p>v-model可以添加修饰值．lazy,number,trim</p>
+</li>
+<li><p>props,父组件给子ｐrops传值时，使用v-bind <code>&lt;my-cop ：my-prop=&#39;1&#39;&gt;&lt;/mycop&gt;</code> 而不是直接<code>&lt;my-cop my-prop=&#39;1&#39;&gt;&lt;/mycop&gt;</code> ，后者传递的只是一个字符１，不是数字</p>
+</li>
+<li><p>父组件事件监听和react差不多，需要注意的是如果要监听原生事件添加.native修饰符，如<code>&lt;my-component v-on:click.native=&quot;doTheThing&quot;&gt;&lt;/my-component&gt;</code></p>
+</li>
+<li><p>slot内容分发，类似angular 的transclusion,有匿名和具名两种，组合组件时常用</p>
+</li>
+<li><p>多个组件可以使用同一个挂载点，然后动态地在它们之间切换。使用 <strong><em> 保留的&lt; component&gt;元素 </em></strong>，动态地绑定到它的is特性：</p>
+</li>
+</ul>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var <span class="keyword">vm</span> = <span class="keyword">new</span> Vue(&#123;</div><div class="line"><span class="keyword">e</span><span class="variable">l:</span> <span class="string">'#example'</span>,</div><div class="line">dat<span class="variable">a:</span> &#123;</div><div class="line">	currentVie<span class="variable">w:</span> <span class="string">'home'</span></div><div class="line">    &#125;,</div><div class="line">    component<span class="variable">s:</span> &#123;</div><div class="line">	home: &#123; /* ... */ &#125;,</div><div class="line">	post<span class="variable">s:</span> &#123; /* ... */ &#125;,</div><div class="line">	archive: &#123; /* ... */ &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)；</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;component v-bind:is=<span class="string">"currentView"</span>&gt;</div><div class="line">  <span class="xml"><span class="comment">&lt;!-- 组件在 vm.currentview 变化时改变！ --&gt;</span></span></div><div class="line"><span class="tag">&lt;/<span class="name">component</span>&gt;</span> <span class="comment">//通过改变currentView的值来动态改变组件内容</span></div></pre></td></tr></table></figure>
+<ul>
+<li>ref引用，类似react　需要注意的是ref 被用来给元素或子组件注册引用信息。引用信息会根据父组件的 $refs 对象进行注册。如果在普通的DOM元素上使用，引用信息就是元素; 如果用在子组件上，引用信息就是组件实例:</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- vm.$refs.p will the DOM node --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">ref</span>=<span class="string">"p"</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- vm.$refs.child will be the child comp instance --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">child-comp</span> <span class="attr">ref</span>=<span class="string">"child"</span>&gt;</span><span class="tag">&lt;/<span class="name">child-comp</span>&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>v-once 渲染结果缓存</li>
+</ul>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="type">Vue</span>.component('terms-<span class="keyword">of</span>-service', &#123;</div><div class="line">	  <span class="keyword">template</span>: '\</div><div class="line">	    &lt;<span class="keyword">div</span> v-once&gt;\</div><div class="line">	      &lt;h1&gt;<span class="type">Terms</span> <span class="keyword">of</span> <span class="type">Service</span>&lt;/h1&gt;\</div><div class="line">	      ... a lot <span class="keyword">of</span> <span class="keyword">static</span> content ...\</div><div class="line">	    &lt;/<span class="keyword">div</span>&gt;\</div><div class="line">	  '</div><div class="line">	&#125;)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/12/04/angular2新手上路/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          angular2新手上路
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/22/前端恢复之路/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端拾遗</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="vue易错笔记" data-title="vue易错笔记.md" data-url="http://clownvary.github.io/2016/11/18/vue易错笔记/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"clownvary"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 clownvary
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
